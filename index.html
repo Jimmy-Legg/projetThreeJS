@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            overflow-x: hidden;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        section.visible {
+            opacity: 1;
+        }
+        h1, h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .project {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(5px);
+        }
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .contact-links a:hover {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <section id="intro">
+            <h1>John Doe</h1>
+            <p>Creative Developer & Digital Artist</p>
+        </section>
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I'm a developer with a passion for creating immersive digital experiences. With expertise in Three.js, WebGL, and creative coding, I bring ideas to life through interactive web applications.</p>
+        </section>
+        
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Interactive Data Visualization</h3>
+                <p>A WebGL-powered 3D visualization of complex datasets, allowing users to explore and interact with data in a unique way.</p>
+            </div>
+            <div class="project">
+                <h3>Generative Art Platform</h3>
+                <p>An online platform for creating and sharing procedurally generated artwork, built with Three.js and React.</p>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Interested in working together? Let's connect!</p>
+            <div class="contact-links">
+                <a href="#" target="_blank">Email</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </section>
+    </div>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js"
+            }
+        }
+    </script>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
