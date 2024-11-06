@@ -1,0 +1,226 @@
+.skills {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #294C60;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.programming {
+    height: auto;
+    margin: 30px;
+    width: 100% - 60px;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    /* Horizontal alignment to the start (left) */
+    align-items: center;
+    /* Vertical alignment to the center */
+    left: 5%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    color: #FFFFFF;
+    transition: transform 0.3s;
+}
+
+.programming img {
+    width: auto;
+    height: 100px;
+    margin: 30px;
+    transition: transform 0.3s;
+}
+
+.programming .logo img {
+    width: auto;
+    height: 50px;
+    margin: 30px;
+    transition: transform 0.3s;
+}
+
+.programming img:hover {
+    transform: scale(1.1);
+}
+
+.programming h2 {
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+    margin-right: 30px;
+
+}
+
+.programming p {
+    font-size: 18px;
+    margin: 10px;
+    margin-top: 5px;
+}
+
+.other {
+    height: auto;
+    margin: 30px;
+    padding-bottom: 100px;
+    width: calc(100% - 60px);
+    /* Adjusted width calculation */
+    z-index: 3;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    left: 5%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    color: #FFFFFF;
+    transition: transform 0.3s;
+}
+
+.other img {
+    border-radius: 10px;
+    width: auto;
+    height: 100px;
+    margin: 30px;
+    transition: transform 0.3s;
+}
+
+.other .logo img {
+    width: auto;
+    height: 50px;
+    margin: 30px;
+    transition: transform 0.3s;
+}
+
+
+.other h2 {
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+    margin-right: 30px;
+}
+
+.other p {
+    font-size: 18px;
+    margin: 10px;
+    margin-top: 5px;
+}
+
+.temple {
+    width: 200px;
+    height: auto;
+    display: inline;
+}
+
+.temple img {
+    margin: 10px;
+}
+
+.enlarged {
+    position: fixed;
+    transform: scale(3);
+    z-index: 99;
+
+}
+
+.activities {
+    margin: 30px;
+    z-index: 0;
+    display: flex;
+    justify-content: flex-start;
+    /* Horizontal alignment to the start (left) */
+    align-items: center;
+    /* Vertical alignment to the center */
+    left: 5%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    color: #FFFFFF;
+}
+
+
+.activities img {
+    width: auto;
+    height: 100px;
+    margin: 30px;
+    transition: transform 0.3s;
+}
+
+.activities img:hover {
+    transform: scale(1.1);
+}
+
+.activities h2 {
+    font-size: 24px;
+    margin: 10px;
+    margin-right: 30px;
+
+}
+
+.activities p {
+    font-size: 18px;
+    margin: 10px;
+    margin-top: 5px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .skills {
+        margin: 0%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skills img {
+        width: 80px;
+        height: auto;
+    }
+
+    .programming {
+        margin: 10px;
+        display: block;
+    }
+
+    .other {
+        margin: 10px;
+        display: block;
+        width: calc(100% - 20px);
+    }
+
+    .other img {
+        width: 80px;
+        height: auto;
+    }
+
+    .temple {
+        width: 200px;
+        height: auto;
+        display: inline;
+    }
+
+    .temple img {
+        margin: 10px;
+    }
+
+    .enlarged {
+        position: fixed;
+        transform: scale(2);
+        z-index: 99;
+
+    }
+
+    .activities {
+        margin: 10px;
+        margin-top: 20px;
+        display: block;
+    }
+
+    .activities img {
+        margin: 0;
+    }
+
+}

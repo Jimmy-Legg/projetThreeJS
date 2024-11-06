@@ -1,115 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="EN">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Portfolio</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            color: white;
-            overflow-x: hidden;
-        }
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        .content {
-            position: relative;
-            z-index: 1;
-        }
-        section {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 2rem;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-        section.visible {
-            opacity: 1;
-        }
-        h1, h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-        .project {
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            backdrop-filter: blur(5px);
-        }
-        .contact-links {
-            display: flex;
-            gap: 1rem;
-        }
-        .contact-links a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border: 2px solid white;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-        .contact-links a:hover {
-            background: white;
-            color: black;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jimmy legg</title>
+  <!-- Main style -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/pcMenu.css">
+  <link rel="stylesheet" href="css/mobileMenu.css">
+  <link rel="stylesheet" href="css/canvas.css">
+  <link rel="stylesheet" href="css/presentation.css">
+  <link rel="stylesheet" href="css/skills.css">
+  <link rel="stylesheet" href="css/card.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
-    <div class="content">
-        <section id="intro">
-            <h1>John Doe</h1>
-            <p>Creative Developer & Digital Artist</p>
-        </section>
-        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>I'm a developer with a passion for creating immersive digital experiences. With expertise in Three.js, WebGL, and creative coding, I bring ideas to life through interactive web applications.</p>
-        </section>
-        
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Interactive Data Visualization</h3>
-                <p>A WebGL-powered 3D visualization of complex datasets, allowing users to explore and interact with data in a unique way.</p>
-            </div>
-            <div class="project">
-                <h3>Generative Art Platform</h3>
-                <p>An online platform for creating and sharing procedurally generated artwork, built with Three.js and React.</p>
-            </div>
-        </section>
-        
-        <section id="contact">
-            <h2>Get in Touch</h2>
-            <p>Interested in working together? Let's connect!</p>
-            <div class="contact-links">
-                <a href="#" target="_blank">Email</a>
-                <a href="#" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">GitHub</a>
-            </div>
-        </section>
+  <p class="textCenter typing-animation">Welcome to Jimmy Legg's website !</p>
+  <p class="textCenterUnder typing-animation1">Here you will find all information about me, my skills, my projects and
+    my contact information.</p>
+
+
+  <a href="#about" class="arrow"><img src="images/down-arrow.svg" alt=""></a>
+  <!-- Computer Menu Style -->
+  <!-- Computer Menu Section -->
+  <div class="navbar">
+    <a class="active" href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#resources">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+
+  <!-- Mobile Menu Toggle -->
+  <a href="#menu" id="toggle"><span></span></a>
+  <!-- Mobile Menu -->
+  <div id="menu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#resources">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <div class="switch">
+        <input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
+        <label for="language-toggle"></label>
+        <span class="on"><img src="images/RU.jpg" alt="" width="20"></span>
+        <span class="off"><img src="images/france.png" alt="" width="20"></span>
+      </div>
+    </ul>
+  </div>
+
+  <!-- Page clic Section -->
+  <main>
+    <!-- Canvas Section-->
+    <div class="hero" id="home">
+      <canvas id="canvas"></canvas>
     </div>
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-                "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js"
-            }
+
+    <!-- Presentation Section -->
+    <div class="presentation" id="about" data-aos="zoom-in">
+      <div>
+        <h1 data-aos="fade-right">Jimmy Legg</h1>
+        <p data-aos="fade-right">Hey, I'm Jimmy Legg, I'm a second year student in computer science at the University of
+          Limoges. I study a
+          larg range of programming languages you will see more details about them down below. I also do Management,
+          Economics and Maths
+        </p>
+      </div>
+    </div>
+    <div class="works" data-aos="flip-right">
+      <img data-aos="zoom-in" src="images/lamp.png" alt="Quality 1">
+      <div class="description">
+        <h2>First intership : ABI(Atelier Berry Informatique)</h2>
+        <p><b>Responsabilities :</b>I installed Windows on numerous computers, built computers, and assisted in
+          resolving computer problems for clients.</p>
+        <p><b>Skills acquired : </b>Improved my knowledge of computer hardware and learned computer skills</p>
+      </div>
+    </div>
+
+    <!-- Quality 2 -->
+    <div class="works" data-aos="flip-right">
+      <img data-aos="zoom-in" src="images/lamp.png" alt="Quality 2">
+      <div class="description">
+        <h2>First work : corn castration</h2>
+        <p><b>Responsabilities :</b> This job was a summer job on cereal farm. I was helping and preparing seed corn.
+          Work requiring high level of consistency and rigour. I had to remove the flowers from the plant so ensure a
+          good harvest</p>
+        <p><b>Skills acquired : </b> My discipline and regularity improved because I had to be very careful while
+          working and couldn't miss flowers</p>
+      </div>
+    </div>
+
+    <!-- Languages and Skills Section -->
+    <div class="skills" id="skills">
+      <div class="programming" data-aos="fade-right">
+        <img data-aos="zoom-in" src="images/lamp.png">
+        <div>
+          <h2>Programming languages</h2>
+          <div class="logo">
+            <img src="images/Python.svg" alt="Python">
+            <img src="images/SQL.png" alt="SQL">
+            <img src="images/HTML.png" alt="HTML">
+            <img src="images/CSS.png" alt="CSS">
+            <img src="images/JS.webp" alt="JS">
+            <img src="images/Java.svg" alt="Java">
+            <img src="images/C.png" alt="C">
+            <img src="images/C++.png" alt="C++">
+          </div>
+
+        </div>
+      </div>
+      <div class="other" data-aos="fade-right">
+        <img data-aos="zoom-in" src="images/lamp.png">
+        <div>
+          <h2>Other skills</h2>
+
+          <div class="logo">
+            <img src="images/blender.png" alt="Blender">
+          </div>
+          <div class="temple">
+            <img id="temple-image" src="images/temple.png" alt="Temple" onclick="toggleImageSize('temple-image')">
+            <img id="candle-image" src="images/candle.jpg" alt="Candle" onclick="toggleImageSize('candle-image')">
+            <img id="well-image" src="images/well.jpg" alt="Well" onclick="toggleImageSize('well-image')">
+            <img id="3D-animation-gif" src="images/3D.gif" alt="Well2" onclick="toggleImageSize('3D-animation-gif')">
+            <img id="3D-ronde-gif" src="images/rond3D.gif" alt="ronde" onclick="toggleImageSize('3D-ronde-gif')">
+          </div>
+        </div>
+      </div>
+      <div class="activities" data-aos="fade-right">
+        <img data-aos="zoom-in" src="images/lamp.png" alt="Quality 2">
+        <div>
+          <h2>Other activities</h2>
+          <p>Swiming</p>
+          <p>Playing the drums</p>
+          <p>Piano</p>
+          <p>Bridge</p>
+          <p>programming</p>
+          <p>Wait training</p>
+
+        </div>
+      </div>
+    </div>
+    
+    <!-- Resources Section -->
+    <div class="container" id="resources">
+      <div class="card a" data-aos="fade-right">
+        <span></span>
+        <div class="content">
+          <h2 data-aos="fade-right">Python Snake</h2>
+          <p data-aos="fade-right">This project was made in high school, it is one of my first in python. It's a replica
+            of the game called Snake. I coded this game using Python and the library PyGame to display it. In this
+            version you can choose between 3 levels and 3 speeds for each the score is saved in a file.</p>
+          <a data-aos="fade-right" href="https://github.com/Leteno18/Snake" target=”_blank”>GitHub repository</a>
+        </div>
+      </div>
+      <div class="card b" data-aos="fade-right">
+        <span></span>
+        <div class="content">
+          <h2 data-aos="fade-right">Python MiniGame</h2>
+          <h3 data-aos="fade-right">school project</h3>
+          <p data-aos="fade-right">In this project I created Python console mini games for university. This project had
+            a menu you could choose to play against a friend or a bot or 2 bots against each other. You had the option
+            between 4 games: 4x4, tic tac toe, match game, number guessing game. If a game isn't familiar, a rules
+            section is there if needed.</p>
+          <a data-aos="fade-right" href="https://github.com/Leteno18/SAE-S1.02" target=”_blank”>GitHub repository</a>
+        </div>
+      </div>
+      <div class="card c" data-aos="fade-right">
+        <span></span>
+        <div class="content">
+          <h2 data-aos="fade-right">Java Project</h2>
+          <p data-aos="fade-right">In this project, we had to create the java replica of the board game named Orchard
+            for
+            university. This game was created in groupe of 2. In this game you have to roll a dice to collect 40 fruits,
+            you lose if you roll 9 time the crow
+            and place all 9 pieces of a the puzzle. This game includes saving player data, music, a rules section and
+            option section. For this project, we had to do versions of the game on git. </p>
+          <a data-aos="fade-right" href="https://github.com/Jimmy-Legg/Orchard " target=”_blank”>GitHub repository</a>
+        </div>
+      </div>
+      <div class="card d" data-aos="fade-right">
+        <span></span>
+        <div class="content">
+          <h2 data-aos="fade-right">Legrand Project</h2>
+          <p data-aos="fade-right">Creating an app for <b>Legrand</b> to manage data using MySQL, Node.js, and React. This project involves developing a comprehensive data management solution for a leading electrical and digital building infrastructure company.</p>
+        </div>
+      </div>
+      <div class="card f" data-aos="fade-right">
+        <span></span>
+        <div class="content">
+          <h2 data-aos="fade-right">Dreams Donuts Command</h2>
+          <p data-aos="fade-right">Explore the Dreams Donuts Command project, a web-based application designed to streamline donut production and management in a multi-level donut establishment.</p>
+          <a data-aos="fade-right" href="/DreamsDonuts" target="_blank">View Project</a>
+        </div>
+      </div>
+      <div class="card g" data-aos="fade-right">
+        <span></span>
+        <div class="content">
+          <h2 data-aos="fade-right">Current Project: La Poste RAG</h2>
+          <p data-aos="fade-right">Developing a Retrieval-Augmented Generation (RAG) system for <b>La Poste</b>. This cutting-edge project combines advanced natural language processing techniques to enhance information retrieval and generation capabilities for France's postal service.</p>
+        </div>
+      </div>
+      <div class="card e" data-aos="fade-right">
+        <span></span>
+        <div class="content">
+          <h2 data-aos="fade-right">CV</h2>
+          <p data-aos="fade-right">Here you can find my CV</p>
+          <a data-aos="fade-right" href="pdf/Jimmy Legg.pdf" target="_blank">Download CV</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contactMe" data-aos="flip-right">
+      <button data-hover="contact@jimmy-legg.site" target="popup"
+        onclick="window.open('http://contact.jimmy-legg.site','Contact','width=600,height=700,resize:none')">
+        <div><a>Contact me</a></div>
+      </button>
+    </div>
+    <!-- Footer Section -->
+    <div class="footer" id="contact">
+      <a href="https://twitter.com/Jimmylegg18" target="_blank"><img src="images/twitter.png" title="twitter"></a>
+      <a href="https://www.linkedin.com/in/jimmy-legg-521623271/" target="_blank"><img src="images/linkedin.png"
+          title="linkedin"></a>
+      <a href="https://github.com/Leteno18" target="_blank"><img src="images/git.png" title="GitHub"></a>
+    </div>
+
+  </main>
+  <script>
+    const button = document.getElementById('contactMe');
+
+    button.addEventListener('click', function () {
+
+      const redirectUrl = 'http://contact.jimmy-legg.site';
+
+      window.location.href = redirectUrl;
+    });
+  </script>
+  <!-- Include JavaScript files -->
+  <script src="script/confetti.js"></script>
+  <script src="script/header.js"></script>
+  <script src="script/language.js"></script>
+  <script src="script/image.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+    const typingSpeed = 50;
+    const initialDelay = 2000;
+
+    function startTypingAnimation(elements, delay) {
+      elements.forEach((element) => {
+        const text = element.innerText;
+        element.innerText = '';
+        let charIndex = 0;
+
+        function type() {
+          if (charIndex < text.length) {
+            element.innerHTML += text.charAt(charIndex);
+            charIndex++;
+            setTimeout(type, typingSpeed);
+          }
         }
-    </script>
-    <script src="main.js" type="module"></script>
+
+        setTimeout(() => {
+          type();
+        }, delay);
+      });
+    }
+
+    const textElements = document.querySelectorAll('.typing-animation');
+    startTypingAnimation(textElements, 0);
+
+    const textElements1 = document.querySelectorAll('.typing-animation1');
+    startTypingAnimation(textElements1, initialDelay);
+  </script>
 </body>
+
 </html>

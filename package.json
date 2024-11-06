@@ -1,19 +1,20 @@
 {
   "name": "projettreejs",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "live-server"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "express": "^4.21.1",
     "three": "^0.168.0"
   }
 }

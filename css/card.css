@@ -1,0 +1,354 @@
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    line-gap-override: 40px;
+    padding: 40px 0;
+}
+
+.card {
+    position: relative;
+    height: 500px;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.card::before,
+.card::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 80px;
+    border-radius: 10px;
+    transform: skewx(15deg);
+    transition: 0.4s;
+}
+
+.card::after {
+    left: 90px;
+    filter: blur(30px);
+}
+
+.card:hover::before,
+.card:hover::after {
+    transform: skewx(0);
+    left: 50px;
+    width: calc(100% - 100px);
+}
+
+.card .content {
+    z-index: 1;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    padding: 20px 50px;
+    transition: 0.4s;
+    color: white;
+}
+
+.card:hover .content {
+    padding: 40px 50px;
+}
+
+.card h2 {
+    font-size: 1.9em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95em;
+    font-weight: 300;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.card a {
+    display: inline-block;
+    text-decoration: none;
+    background: white;
+    color: #222;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Card A */
+.card.a {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.card.a::before,
+.card.a::after {
+    background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.card.a:hover span::before {
+    top: -70px;
+}
+
+.card.a:hover span::after {
+    background-image: url("../images/Snake.gif");
+    width: 200px;
+    height: 200px;
+    left: 250px;
+    bottom: -110px;
+}
+
+/* Card B */
+.card.b {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.card.b::before,
+.card.b::after {
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.card.b:hover span::before {
+    top: -70px;
+}
+
+.card.b:hover span::after {
+    background-image: url("../images/JeuxPy.gif");
+    width: 200px;
+    height: 200px;
+    left: 250px;
+    bottom: -100px;
+}
+
+/* Card C */
+.card.c {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.card.c::before,
+.card.c::after {
+    background: linear-gradient(315deg, #3cc900, #00acd3);
+}
+
+.card.c:hover span::before {
+    height: 100px;
+    top: -80px;
+}
+
+.card.c:hover span::after {
+    background-image: url("../images/Orchard.gif");
+    width: 300px;
+    height: 120px;
+    left: 10px;
+    bottom: -100px;
+}
+
+/* Card D */
+.card.d {
+    height: 400px;
+    width: 400px;
+}
+
+.card.d::before,
+.card.d::after {
+    background: linear-gradient(315deg, #0370ff, #ff0000);
+    width: 45%;
+    height: 90%;
+    top: 5%;
+    left: 100px;
+}
+
+.card.d::after {
+    left: 70px;
+}
+
+.card.d:hover::before,
+.card.d:hover::after {
+    left: 80px;
+    width: calc(100% - 160px);
+}
+
+.card.d .content {
+    padding: 20px;
+    width: 300px;
+}
+
+.card.d h2 {
+    font-size: 1.8em;
+}
+
+.card.d p {
+    font-size: 0.95em;
+}
+
+.card.d:hover span::before {
+    top: -20px;
+    left: 300px;
+}
+
+.card.d:hover span::after {
+    bottom: -10px;
+}
+
+/* Cards E, F, G */
+.card.e,
+.card.f,
+.card.g {
+    height: 400px;
+    width: 400px;
+}
+
+.card.e::before,
+.card.e::after,
+.card.f::before,
+.card.f::after,
+.card.g::before,
+.card.g::after {
+    width: 45%;
+    height: 90%;
+    top: 5%;
+    left: 100px;
+}
+
+.card.e::after,
+.card.f::after,
+.card.g::after {
+    left: 70px;
+}
+
+.card.e:hover::before,
+.card.e:hover::after,
+.card.f:hover::before,
+.card.f:hover::after,
+.card.g:hover::before,
+.card.g:hover::after {
+    left: 80px;
+    width: calc(100% - 160px);
+}
+
+.card.e .content,
+.card.f .content,
+.card.g .content {
+    padding: 20px;
+    width: 300px;
+}
+
+.card.e h2,
+.card.f h2,
+.card.g h2 {
+    font-size: 1.8em;
+}
+
+.card.e p,
+.card.f p,
+.card.g p {
+    font-size: 0.95em;
+}
+
+.card.e:hover span::before,
+.card.f:hover span::before,
+.card.g:hover span::before {
+    top: -20px;
+    left: 300px;
+}
+
+.card.e:hover span::after,
+.card.f:hover span::after,
+.card.g:hover span::after {
+    bottom: -10px;
+}
+
+/* Specific background gradients for each card */
+.card.d::before,
+.card.d::after {
+    background: linear-gradient(315deg, #0370ff, #ff0000);
+}
+
+.card.e::before,
+.card.e::after {
+    background: linear-gradient(315deg, #4CAF50, #8BC34A);
+}
+
+.card.f::before,
+.card.f::after {
+    background: linear-gradient(315deg, #FF69B4, #FFB6C1);
+}
+
+.card.g::before,
+.card.g::after {
+    background: linear-gradient(315deg, #0026ff, #fffb00);
+}
+
+/* Specific hover images for each card */
+.card.e:hover span::before {
+    background-image: url("../images/cv-icon.png");
+}
+
+.card.f:hover span::before {
+    background-image: url("../images/donut-icon.png");
+}
+
+.card.g:hover span::before {
+    background-image: url("../images/ai-icon.png");
+}
+
+.card.e:hover span::after {
+    background-image: url("../images/cv-preview.png");
+}
+
+.card.f:hover span::after {
+    background-image: url("../images/donuts-production.gif");
+}
+
+.card.g:hover span::after {
+    background-image: url("../images/rag-diagram.png");
+}
+
+/* Responsive styles */
+@media screen and (max-width: 400px) {
+    .card {
+        margin-top: 200px;
+        margin-bottom: 200px;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .card.a:hover span::before,
+    .card.b:hover span::before,
+    .card.c:hover span::before {
+        top: -180px;
+    }
+
+    .card.d:hover span::before {
+        top: -20px;
+        left: 140px;
+    }
+
+    .card.e:hover span::before,
+    .card.f:hover span::before,
+    .card.g:hover span::before {
+        top: -220px;
+        left: 140px;
+    }
+
+    .content {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 0;
+}

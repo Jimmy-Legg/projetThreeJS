@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreams Donuts Command - Streamlining Donut Production</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/inter/3.19.3/inter.css" rel="stylesheet">
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+        "three/examples/jsm/controls/OrbitControls": "https://unpkg.com/three@0.161.0/examples/jsm/controls/OrbitControls.js"
+      }
+    }
+    </script>
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --text-color: #ffffff;
+            --background-color: #000000;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        #content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            background: linear-gradient(45deg, var(--primary-color), #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .project {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-links a:hover {
+            background: var(--primary-color);
+            color: var(--background-color);
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 1rem;
+            }
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 1rem auto;
+        }
+
+        .glitch-effect {
+            animation: glitch 0.3s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-5px, 5px) }
+            40% { transform: translate(-5px, -5px) }
+            60% { transform: translate(5px, 5px) }
+            80% { transform: translate(5px, -5px) }
+            100% { transform: translate(0) }
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    <div id="content">
+        <section id="intro" class="section">
+            <h1>Dreams Donuts Command</h1>
+            <p>Streamlining Donut Production and Management</p>
+        </section>
+
+        <section id="about" class="section">
+            <h2>About the Project</h2>
+            <p>Dreams Donuts Command is a web-based application designed to bridge the communication gap between the shop and production areas in a multi-level donut establishment. It provides a centralized platform for managing donut production, updating weekly selections, and streamlining operations.</p>
+            <h3>Shop and Production Layout</h3>
+            <p><strong>Problem Statement:</strong> The shop and production areas are on separate levels:</p>
+            <ul>
+                <li><strong>Level 0:</strong> The shop where customers can access from the street.</li>
+                <li><strong>Level 1:</strong> The production area where donuts are made.</li>
+            </ul>
+            <p>Currently, there is no practical communication between the shop and the production area except via a staircase and a phone. This setup can lead to inefficiencies and delays in communication.</p>
+            <p><strong>Proposed Solution:</strong> The Dreams Donuts Command Application aims to bridge this communication gap by providing a centralized digital platform. This application allows the shop and production teams to communicate more effectively and manage production needs without relying solely on physical or verbal methods.</p>
+        </section>
+
+        <section id="features" class="section">
+            <h2>Features</h2>
+            
+            <div class="project">
+                <h3>Home</h3>
+                <p>The home page provides a central navigation hub for accessing different functionalities of the application.</p>
+                <img src="https://i.ibb.co/vHtTvkX/Home.png" alt="Home" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="project">
+                <h3>Produce</h3>
+                <p>The produce page allows users to input commands related to donut production. You can record missing or produced donuts here.</p>
+                <img src="https://i.ibb.co/W3s61bP/produce.png" alt="Produce" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="project">
+                <h3>Donuts Manquants Popup</h3>
+                <p>When clicking on the image of a donut it shows a popup where users can send donuts that are missing or need to be restocked in shop window. It provides a summary of the current production needs. There are numbers from 1 to 9, 1plaque that is 15 donuts and vide which is an empty button that is used when there is no more of a specific donut.</p>
+                <img src="https://i.ibb.co/8MGdPV0/Donuts-Manquants.png" alt="Donuts-Manquants" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="project">
+                <h3>Donut Card</h3>
+                <p>When a number is clicked the number of donuts currently in production is shown on the donut and the background changes to green.</p>
+                <img src="https://i.ibb.co/YtQcV12/production.png" alt="Production" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="project">
+                <h3>Week Selection</h3>
+                <p>Here, you can select which donuts will be featured for the week. This page allows you to manage weekly selections.</p>
+                <img src="https://i.ibb.co/0QhwQBc/weekselection.png" alt="Week Selection" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="project">
+                <h3>Week Selection Validation</h3>
+                <p>This page allows you to validate your weekly donut selections. You can review and confirm the donuts that will be featured.</p>
+                <img src="https://i.ibb.co/bQpFQzz/weekselection-png-validate.png" alt="Week Selection Validate" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="project">
+                <h3>Lab</h3>
+                <p>The LAB page provides an interface where commands from the produce page can be seen.</p>
+                <img src="https://i.ibb.co/Dg9WGXJ/caisse.png" alt="Caisse" style="max-width: 100%; height: auto;">
+            </div>
+            
+            <div class="project">
+                <h3>Sounds</h3>
+                <p>On the LAB page there are ding sounds and voice announcing new donuts sent, the voice and ding sound can be muted.</p>
+                <img src="https://i.ibb.co/QHJX8YY/sounds.png" alt="Sounds" style="max-width: 100%; height: auto;">
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Get in Touch</h2>
+            <p>Interested in implementing Dreams Donuts Command for your business? Let's connect!</p>
+            <div class="contact-links">
+                <a href="#" target="_blank">Email</a>
+                <a href="#" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">GitHub</a>
+            </div>
+        </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach((section) => {
+            observer.observe(section);
+        });
+    </script>
+    <svg style="display: none;">
+        <filter id="glitch-filter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="1" result="warp" />
+            <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="10" in="SourceGraphic" in2="warp" />
+        </filter>
+    </svg>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('Service Worker registered successfully:', registration.scope);
+            })
+            .catch((error) => {
+              console.log('Service Worker registration failed:', error);
+            });
+        });
+      }
+    </script>
+</body>
+</html>

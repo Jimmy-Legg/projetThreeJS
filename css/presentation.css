@@ -1,0 +1,128 @@
+.presentation {
+    height: auto;
+    margin: 30px;
+    width: 100% - 60px;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    /* Horizontal alignment to the start (left) */
+    align-items: center;
+    /* Vertical alignment to the center */
+    left: 5%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background-color: #294C60;
+    color: #FFC49B;
+}
+
+.presentation h1 {
+    font-size: 34px;
+    margin: 10px;
+}
+
+.presentation p {
+    font-size: 20px;
+    margin: 10px;
+    margin-top: 10px;
+}
+
+.presentation img {
+    width: auto;
+    height: 300px;
+    margin: 30px;
+    margin-right: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.description h2 {
+    font-size: 34px;
+    margin: 10px;
+}
+
+.description p {
+    font-size: 20px;
+    margin: 10px;
+    margin-top: 10px;
+
+}
+
+.works {
+    height: auto;
+    margin: 30px;
+    width: 100% - 60px;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    /* Horizontal alignment to the start (left) */
+    align-items: center;
+    /* Vertical alignment to the center */
+    left: 5%;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    color: white;
+    overflow: hidden;
+}
+
+.works img {
+    width: auto;
+    height: 80px;
+    margin: 30px;
+    margin-right: 20px;
+    transition: transform 0.3s;
+}
+
+.works img:hover {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+    .presentation {
+        display: block;
+        text-align: justify;
+        padding: 10px;
+        margin: 10px;
+
+    }
+
+    .presentation img {
+        object-position: center;
+        object-fit: cover;
+        width: auto;
+        height: 200px;
+    }
+
+    .presentation p {
+        padding-bottom: 40px;
+    }
+
+    .works {
+        margin: 10px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .presentation img {
+        width: auto;
+        height: 150px;
+    }
+
+
+    .description p {
+        text-align: justify;
+    }
+
+    .description h2 {
+        font-size: 20px;
+    }
+
+    .description p {
+        font-size: 14px;
+    }
+}
